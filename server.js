@@ -29,6 +29,10 @@ app.get('/animes/new', (req, res) => {
     res.render('animes/new.ejs');
 });
 
+app.get("/animes/:animeId", async (req, res) => {
+    const foundAnime = await Anime.findById(req.params.animeId);
+    res.render('animes/show.ejs', { anime: foundAnime });
+  });
 
 app.post("/animes", async (req, res) => {
     if (req.body.isReadyToWatch === "on") {

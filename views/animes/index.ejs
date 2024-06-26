@@ -10,7 +10,7 @@
     <a href="/animes/new">Add new anime</a>
     <ul>
         <% animes.forEach( anime => { %>
-          <li><%= anime.name %></li>
+          <li><a href="/animes/<%= anime._id %>"><%= anime.name %></a></li>
         <% }); %>
       </ul>
   </body>
