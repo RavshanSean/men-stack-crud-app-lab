@@ -12,6 +12,12 @@
     <% } else { %>
         <p>This Anime is not ready to Watch!</p>
     <% } %>
+    
+    <form action="/animes/<%= anime._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= anime.name %></button>
+    </form>
+
+
     <a href="/animes/">Back to Anime List</a>
 
   </body>
