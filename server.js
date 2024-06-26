@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const methodOverride = require("method-override");//new
 const morgan = require("morgan");//new
 
+const path = require("path");
+
 const app = express();
 
 
@@ -20,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); // new
 app.use(morgan("dev")); //new
 
-
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/', async (req, res) => {
     res.render('index.ejs')
@@ -89,6 +91,8 @@ app.post("/animes", async (req, res) => {
     await Anime.findByIdAndDelete(req.params.animeId);
     res.redirect('/animes');
   });
+
+  
 
 app.listen(3000, () => {
  console.log('Listening on port 3000')

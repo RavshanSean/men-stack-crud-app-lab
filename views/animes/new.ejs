@@ -6,9 +6,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create a Anime List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <!--new.ejs-->
   <body>
+    <!-- new.ejs / edit.ejs -->
+
+<div class="checkbox-div">
+  <label for="ready-to-eat">Ready to Eat?</label>
+  <input type="checkbox" name="isReadyToEat" id="ready-to-eat" />
+</div>
+
     <h1>Add a New Anime!</h1>
     <form action="/animes" method="POST">
         <label for="name">Name:</label>

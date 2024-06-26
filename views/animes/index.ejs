@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animes Index</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <div class="index-header-div">
     <h1>All Animes</h1>
-    <a href="/animes/new">Add new anime</a>
+    <a class="add-fruit" href="/animes/new">Add new anime</a>
+    </div>
     <ul>
         <% animes.forEach( anime => { %>
           <li><a href="/animes/<%= anime._id %>"><%= anime.name %></a></li>

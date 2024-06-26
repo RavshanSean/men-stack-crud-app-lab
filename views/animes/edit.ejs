@@ -6,9 +6,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit <%= anime.name %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <!--edit.ejs-->
   <body>
+    <!-- new.ejs / edit.ejs -->
+
+<div class="checkbox-div">
+  <label for="ready-to-eat">Ready to Eat?</label>
+  <input type="checkbox" name="isReadyToEat" id="ready-to-eat" />
+</div>
+
+    <a class="fruits-index-link" href="/fruits">Browse Fruits</a>
     <h1>Edit <%= anime.name %></h1>
     <form action="/animes/<%= anime._id%>?_method=PUT" method="POST">
         <label for="name">Name:</label>

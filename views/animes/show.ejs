@@ -4,21 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= anime.name %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <div class="fruit-details">
+      <!-- show page content -->
+    </div>
+    <a class="fruits-index-link" href="/fruits">
+      <div class="index-link-text">Back to Fruits</div>
+    </a>
     <h1><%= anime.name %></h1>
     <% if (anime.isReadyToWatch) { %>
         <p>This Anime is ready to Watch!</p>
     <% } else { %>
         <p>This Anime is not ready to Watch!</p>
     <% } %>
-    
+    <div class="fruit-actions">
     <form action="/animes/<%= anime._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= anime.name %></button>
     </form>
 
     <a href="/animes/<%= anime._id %>/edit">Edit <%= anime.name %></a>
     <a href="/animes/">Back to Anime List</a>
-
+</div>
   </body>
 </html>
