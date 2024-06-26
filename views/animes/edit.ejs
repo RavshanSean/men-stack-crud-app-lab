@@ -1,0 +1,24 @@
+<!-- views/animes/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit <%= anime.name %></title>
+  </head>
+  <!--edit.ejs-->
+  <body>
+    <h1>Edit <%= anime.name %></h1>
+    <form action="/animes/<%= anime._id%>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= anime.name %>"/>
+    
+        <label for="isReadyToWatch">Ready to Watch?</label>
+        <input type="checkbox" name="isReadyToWatch" id="isReadyToWatch" <% if (anime.isReadyToWatch) { %>cheked<% } %>/>
+    
+        <button type="submit">Update Anime</button>
+      </form>
+<a href="/animes/">Back to Anime List</a>
+  </body>
+</html>

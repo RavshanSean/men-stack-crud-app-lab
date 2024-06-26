@@ -39,6 +39,30 @@ app.get("/animes/:animeId", async (req, res) => {
     res.render('animes/show.ejs', { anime: foundAnime });
   });
 
+
+
+//edit
+app.put("/animes/:animeId", async (req, res) => {
+    if (req.body.isReadyToWatch === "on") {
+      req.body.isReadyToWatch = true;
+    } else {
+      req.body.isReadyToWatch = false;
+    }
+    await Anime.findByIdAndUpdate(req.params.animeId, req.body);
+    res.redirect(`/animes/${req.params.animeId}`);
+});
+
+
+  app.get("/animes/:animeId/edit", async (req, res) => {
+    const foundAnime = await Anime.findById(req.params.animeId);
+    console.log(foundAnime);
+    res.render('animes/edit.ejs', {
+        anime: foundAnime, 
+    });
+  });
+  
+
+
 app.post("/animes", async (req, res) => {
     if (req.body.isReadyToWatch === "on") {
         req.body.isReadyToWatch = true;
