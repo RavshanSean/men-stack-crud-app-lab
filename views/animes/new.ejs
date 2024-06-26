@@ -1,0 +1,24 @@
+<!-- views/animes/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Anime List</title>
+  </head>
+  <!--new.ejs-->
+  <body>
+    <h1>Add a New Anime!</h1>
+    <form action="/animes" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+    
+        <label for="isReadyToWatch">Ready to Watch?</label>
+        <input type="checkbox" name="isReadyToWatch" id="isReadyToWatch" />
+    
+        <button type="submit">Add Anime</button>
+      </form>
+<a href="/animes/">Back to Anime List</a>
+  </body>
+</html>
